@@ -28,10 +28,10 @@ find_package(Boost CONFIG)
 # ---------------------------------------------------------------------------------------
 # Build local libraries
 # ---------------------------------------------------------------------------------------
-add_library(mylib STATIC src/mylib.cpp)
+add_library(mylib src/mylib.cpp)
 
 # Instructs cmake to package the includes with the library target. PUBLIC headers are 
-# requrired in downstream packages, while PRIVATE headers are required in the build
+# required in downstream packages, while PRIVATE headers are required in the build
 # only, ie. they only in exist in private headers and .cpp files
 target_include_directories(mylib 
   PUBLIC

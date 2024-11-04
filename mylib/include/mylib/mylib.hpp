@@ -1,10 +1,14 @@
 #pragma once
 
+#include <memory>
+
+class MyLibImpl;
 
 class MyLib
 {
 public:
     MyLib();
+    ~MyLib();
 
     void Method1();
     int Method2() const;
@@ -12,6 +16,5 @@ public:
     void Matrix() const;
 
 private:
-    int var1_;
-    double var2_;
+    std::unique_ptr<MyLibImpl> impl_;
 };
